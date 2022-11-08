@@ -85,15 +85,10 @@ export default {
 
 header {
     width: 100%;
-    height: 120px;
+    height: $header-height;
     background-color: white;
-    // DEBUG
-    border: 1px solid black;
 
     .container {
-        width: 70%;
-        height: 100%;
-        margin: 0 auto;
         @include flex-center("vertical");
         position: relative;
         
