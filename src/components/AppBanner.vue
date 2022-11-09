@@ -38,7 +38,7 @@ export default {
 
 <template>
     <section class="banner">
-        <div class="container-banner">
+        <div class="container-small">
             <div class="col">
                 <div class="item" v-for="(icon, index) in icons" :key="index">
                     <img :src="getImageUrl(`../assets/img/${icon.image}`)" alt="">
@@ -59,9 +59,8 @@ export default {
     background-color: $primary-color;
     @include flex-center("vertical");
 
-    .container-banner {
-        width: 65%;
-        margin: 0 auto;
+    .container-small {
+        
         .col {
             @include flex-center("both");
             .item {
