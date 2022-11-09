@@ -1,6 +1,10 @@
 <script>
+import ComicCard from './ComicCard.vue';
 export default {
     name: "AppMain",
+    components: {
+        ComicCard
+    },
     data() {
         return {
             comics : [
@@ -87,54 +91,9 @@ export default {
         <section class="comics">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
-                    <div class="col">
-                        <img src="https://m.media-amazon.com/images/I/81D3PzuB5pL.jpg" alt="">
-                        <h3>title</h3>
-                    </div>
+                    <ComicCard v-for="(comic,index) in comics" :key="index"
+                    :image="comic.thumb" :title="comic.series"/>
+                    
                 </div>
             </div>
         </section>
@@ -157,22 +116,6 @@ main {
             @include flex-center("horizontal");
             flex-wrap: wrap;
             justify-content: space-between;
-
-            .col {
-                width: calc(100% / 6 - 10px);
-                padding: 15px 0;
-
-                img {
-                    padding-bottom: 10px;
-                }
-
-                h3 {
-                    font-size: 18px;
-                    font-weight: 400;
-                    color: white;
-                    text-transform: uppercase;
-                }
-            }
         }
     }
 }
