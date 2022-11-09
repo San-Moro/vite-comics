@@ -25,10 +25,11 @@ export default {
     padding: 15px 0;
 
     h3 {
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 400;
         color: white;
         text-transform: uppercase;
+        padding-top: 10px;
     }
 }
 

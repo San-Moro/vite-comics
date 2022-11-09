@@ -92,8 +92,10 @@ export default {
             <div class="container">
                 <div class="row">
                     <ComicCard v-for="(comic,index) in comics" :key="index"
-                    :image="comic.thumb" :title="comic.series"/>
-                    
+                    :image="comic.thumb" :title="comic.series"/> 
+                </div>
+                <div class="btn-main">
+                    <a class="btn" href="#">load more</a>
                 </div>
             </div>
         </section>
@@ -111,11 +113,20 @@ main {
 
     .container {
         @include flex-center("vertical");
+        flex-direction: column;
+
 
         .row { 
             @include flex-center("horizontal");
             flex-wrap: wrap;
             justify-content: space-between;
+        }
+
+        .btn-main {
+            background-color: $primary-color;
+            font-size: 14px;
+            padding: 10px 60px;
+            margin-top: 20px;
         }
     }
 }
