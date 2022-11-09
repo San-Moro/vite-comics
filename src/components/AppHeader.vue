@@ -87,7 +87,8 @@ header {
     width: 100%;
     height: $header-height;
     background-color: white;
-
+    margin: 10px 0;
+    
     .container {
         @include flex-center("vertical");
         position: relative;
@@ -105,7 +106,7 @@ header {
             right: 0;
 
             ul {
-                height: 120px;
+                height: $header-height;
                 list-style-type: none;
                 @include flex-center("vertical");
 
@@ -116,6 +117,8 @@ header {
                         color: $secondary-color;
                         font-size: 13px;
                         font-weight: 900;
+                        line-height: 80px;
+                        display: inline-block;
                         &.active {
                             color: $primary-color;
                             border-bottom: 2px solid $primary-color;

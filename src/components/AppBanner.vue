@@ -1,6 +1,38 @@
 <script>
 export default {
-    name: "AppBanner"
+    name: "AppBanner",
+    data() {
+        return {
+            icons: [
+                {
+                    image: 'buy-comics-digital-comics.png',
+                    title: "Digital comics"
+                },
+                {
+                    image: 'buy-comics-merchandise.png',
+                    title: "Dc merchandise"
+                },
+                {
+                    image: 'buy-comics-shop-locator.png',
+                    title: "Comic shop locator"
+                },
+                {
+                    image: 'buy-comics-subscriptions.png',
+                    title: "Subscription"
+                },
+                {
+                    image: 'buy-dc-power-visa.svg',
+                    title: "DC Power Visa"
+                }
+                
+            ]
+        }
+    },
+    methods: {
+        getImageUrl(url) {
+            return new URL(url, import.meta.url).href;
+        }
+    }
 }
 </script>
 
@@ -8,9 +40,9 @@ export default {
     <section class="banner">
         <div class="container-banner">
             <div class="col">
-                <div class="item">
-                    <img src="../assets/img/buy-comics-digital-comics.png" alt="">
-                    <h3>DIGITAL COMICS</h3>
+                <div class="item" v-for="(icon, index) in icons" :key="index">
+                    <img :src="getImageUrl(`../assets/img/${icon.image}`)" alt="">
+                    <h3>{{ icon.title }}</h3>
                 </div>
             </div>
         </div>
@@ -25,18 +57,20 @@ export default {
     width: 100%;
     height: 170px;
     background-color: $primary-color;
+    @include flex-center("vertical");
 
     .container-banner {
         width: 65%;
         margin: 0 auto;
         .col {
+            @include flex-center("both");
             .item {
                 width: 100%;
-                height: $banner-height;
-                @include flex-center("vertical");
+                @include flex-center("both");
+
 
                 img {
-                    width: 50px;
+                    width: 40px;
                 }
 
                 h3 {
@@ -44,6 +78,7 @@ export default {
                     font-weight: 400;
                     color: white;
                     margin-left: 20px;
+                    text-transform: uppercase;
                 }
             }
         }
