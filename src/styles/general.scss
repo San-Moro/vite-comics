@@ -16,7 +16,6 @@ img {
 
 .container {
     width: 70%;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -27,6 +26,10 @@ img {
 
 a {
     text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }
 
 .btn {

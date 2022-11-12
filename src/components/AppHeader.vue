@@ -107,7 +107,6 @@ header {
 
             ul {
                 height: $header-height;
-                list-style-type: none;
                 @include flex-center("vertical");
 
                 li {

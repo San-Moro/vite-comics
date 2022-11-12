@@ -18,8 +18,50 @@ export default {
                 },
                 {
                     img: 'footer-periscope.png',
+                },  
+            ],
+            linksNavFooter: [
+                {
+                    title: "CHARACTERS",
+                    href: "",
                 },
-                
+                {
+                    title: "COMICS",
+                    href: "",
+                },
+                {
+                    title: "MOVIE",
+                    href: "",
+                },
+                {
+                    title: "TV",
+                    href: "",
+                },
+                {
+                    title: "GAMES",
+                    href: "",
+                },
+                {
+                    title: "COLLECTIBLES",
+                    href: "",
+                },
+                {
+                    title: "VIDEOS",
+                    href: "",
+                },
+                {
+                    title: "FANS",
+                    href: "",
+                },
+                {
+                    title: "NEWS",
+                    href: "",
+                },
+                {
+                    title: "SHOP",
+                    href: "",
+                }
+
             ]
         }
     },
@@ -33,11 +75,42 @@ export default {
 
 <template>
     <footer>
-        <div class="container">
-            <nav class="nav-footer">
-
-            </nav>
-            <div class="footer-bottom">
+        <nav class="nav-footer">
+            <div class="container">
+                <div class="menu-footer">
+                    <div class="col">
+                        <h3>Dc Comics</h3>
+                        <ul v-for="(linkNav, index) in linksNavFooter" :key="index"> 
+                            <li>
+                                <a href="">{{linkNav.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Dc Comics</h3>
+                        <ul v-for="(linkNav, index) in linksNavFooter" :key="index"> 
+                            <li>
+                                <a href="">{{linkNav.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Dc Comics</h3>
+                        <ul v-for="(linkNav, index) in linksNavFooter" :key="index"> 
+                            <li>
+                                <a href="">{{linkNav.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                
+                </div>
+                <div class="logo-bg-footer">
+                    <img src="../assets/img/dc-logo-bg.png" alt="">
+                </div>
+            </div>
+        </nav>
+        <div class="footer-bottom">
+            <div class="container">
                 <div class="btn btn-footer">
                     <a href="#">sign-up now!</a>
                 </div>
@@ -48,6 +121,7 @@ export default {
                     </a>
                 </div>
             </div>
+            
         </div>
     </footer>
 </template>
@@ -58,23 +132,63 @@ export default {
 
 footer {
     width: 100%;
-    height: $footer-height;
     background-color: $secondary-color;
 
-    .container {
-        @include flex-center("vertical");
-        flex-direction: column;
+    
+    .nav-footer {
+        width: 100%;
+        background-image: url(../assets/img/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
 
-        .nav-footer {
-            width: 100%;
-            height: 300px;
-            border: 1px solid white;
+        .container {
+            display: flex;
+            justify-content: space-between ;
+
+            .menu-footer {
+                width: 40%;
+                padding: 30px 0;
+                display: flex;
+                .col {
+                    padding-right: 40px;
+
+                    h3 {
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        padding-bottom: 15px;
+                    }
+                }
+
+                li {
+                    text-transform: lowercase;
+                    a {
+                        color: grey;
+
+                    }
+                }
+            }
+
+            .logo-bg-footer {
+                width: 40%;
+
+                img {
+                    transform: scale(1.2);
+                }
+            }  
         }
 
-        .footer-bottom {
-            width: 100%;
+    }
+    .footer-bottom {
+        width: 100%;
+        background-color: $secondary-color;
+        @include flex-center("vertical");
+        flex-direction: column;
+        position: absolute;
+        z-index: 999;
+
+        .container {
             padding: 30px 0;
-            border: 1px solid red;
             @include flex-center("vertical");
             justify-content: space-between;
 
